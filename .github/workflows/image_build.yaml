@@ -36,7 +36,7 @@ jobs:
     needs: prepare_release
     strategy:
       matrix:
-        DEVICE: [pinephone, pinephonepro]
+        DEVICE: [halium-9]
         EDITION: [phosh]
         BRANCH: [unstable]
     steps:
@@ -51,9 +51,9 @@ jobs:
           format: 'YYYYMMDD'
       - 
         id: image-build
-        uses: manjaro-arm/rootfs@master
+        uses: erikinkinen/rootfs@master
         with:
-          arm-profiles-repo: https://github.com/manjaro-pinephone/arm-profiles
+          arm-profiles-repo: https://github.com/manjaro-libhybris/arm-profiles
           device: ${{ matrix.device }}
           edition: ${{ matrix.edition }}
           branch: ${{ matrix.branch }}
