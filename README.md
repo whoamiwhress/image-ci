@@ -1,22 +1,17 @@
 # Manjaro Phosh Developer Edition
-[![iso_build](https://github.com/manjaro-pinephone/phosh-dev/workflows/image_build/badge.svg)](https://github.com/manjaro-pinephone/phosh-dev/actions)
+[![iso_build](https://github.com/manjaro-libhybris/image-ci/workflows/image_build/badge.svg)](https://github.com/manjaro-libhybris/image-ci/actions)
 
 ## description
 
-Development branch for Phosh of Manjaro Linux for the Pinephone
+Development branch for Phosh of Manjaro Linux for Halium
 
 ## where can I download an iso?
 
-Images are build and uploaded in a relatively regular interval to [github releases](https://github.com/manjaro-pinephone/phosh-dev/releases)
+Images are build and uploaded in a relatively regular interval to [github releases](https://github.com/manjaro-libhybris/image-ci/releases)
 
 ## sources
 
-- [image profile](https://github.com/manjaro-pinephone/arm-profiles)
-
-## building
-
-1. check out the arm-profiles
-2. `sudo buildarmimg -d pinephone -e phosh -v dev-20210227 -b unstable`
+- [image profile](https://github.com/manjaro-libhybris/arm-profiles)
 
 ## credentials
 
