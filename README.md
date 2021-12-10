@@ -1,9 +1,9 @@
-# Manjaro Phosh Developer Edition
+# Manjaro Halium Developer Edition
 [![iso_build](https://github.com/manjaro-libhybris/image-ci/workflows/image_build/badge.svg)](https://github.com/manjaro-libhybris/image-ci/actions)
 
 ## description
 
-Development branch for Phosh of Manjaro Linux for Halium
+Development branch Manjaro Linux on Halium
 
 ## where can I download an iso?
 

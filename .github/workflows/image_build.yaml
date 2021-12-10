@@ -37,7 +37,7 @@ jobs:
     strategy:
       matrix:
         DEVICE: [halium-9]
-        EDITION: [phosh]
+        EDITION: [phosh, nemomobile]
         BRANCH: [unstable]
     steps:
       - 
@@ -58,6 +58,7 @@ jobs:
           edition: ${{ matrix.edition }}
           branch: ${{ matrix.branch }}
           version: ${{ steps.time.outputs.time }}
+          overlay-repo: https://img.nemomobile.net/manjaro/10.2021/devel/aarch64/nemomobile.db
           #CI_PUB_KEY: "${{ secrets.CI_PUB_KEY }}"
           #CI_GPG_SECRET: "${{ secrets.CI_GPG_SECRET }}"
           #CI_GPG_PASSPHRASE: "${{ secrets.CI_GPG_PASSPHRASE }}"
