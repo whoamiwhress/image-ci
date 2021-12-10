@@ -36,7 +36,7 @@ jobs:
     needs: prepare_release
     strategy:
       matrix:
-        DEVICE: [halium-9]
+        DEVICE: [halium-9, volla-yggdrasil]
         EDITION: [phosh, nemomobile]
         BRANCH: [unstable]
     steps:
