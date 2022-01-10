@@ -7,7 +7,7 @@ Development branch Manjaro Linux on Halium
 
 ## where can I download an iso?
 
-Images are build and uploaded in a relatively regular interval to [github releases](https://github.com/manjaro-libhybris/image-ci/releases)
+Images are built and uploaded in a relatively regular interval to [github releases](https://github.com/manjaro-libhybris/image-ci/releases)
 
 ## sources
 
