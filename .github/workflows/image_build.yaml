@@ -36,8 +36,8 @@ jobs:
     needs: prepare_release
     strategy:
       matrix:
-        DEVICE: [halium-9, volla-yggdrasil]
-        EDITION: [phosh, nemomobile]
+        DEVICE: [halium-9, volla-yggdrasil, google-sargo]
+        EDITION: [phosh, nemomobile, cutie]
         BRANCH: [unstable]
     steps:
       - 
@@ -54,7 +54,8 @@ jobs:
         run: |
           [[ $edition == 'plasma-mobile-dev' ]] && echo "::set-output name=overlay_repo::kde-unstable"
           [[ $edition == 'nemomobile' ]] && echo "::set-output name=overlay_repo::https://img.nemomobile.net/manjaro/10.2021/devel/aarch64/nemomobile.db"
-          [[ $edition != 'plasma-mobile-dev' && $edition != 'nemomobile' ]] && echo "::set-output name=overlay_repo::"
+          [[ $edition == 'cutie' ]] && echo "::set-output name=overlay_repo::http://manjaro.pages.erikinkinen.fi/repo/aarch64/eriki.db"
+          [[ $edition != 'plasma-mobile-dev' && $edition != 'nemomobile' && $edition != 'cutie' ]] && echo "::set-output name=overlay_repo::"
           true
         env:
           edition: ${{ matrix.edition }}
