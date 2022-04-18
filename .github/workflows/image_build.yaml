@@ -37,7 +37,7 @@ jobs:
     strategy:
       matrix:
         DEVICE: [halium-9, volla-yggdrasil, google-sargo]
-        EDITION: [phosh, cutie]
+        EDITION: [nemomobile]
         BRANCH: [unstable]
     steps:
       - 
@@ -53,7 +53,7 @@ jobs:
         id: check_overlay_repo
         run: |
           [[ $edition == 'plasma-mobile-dev' ]] && echo "::set-output name=overlay_repo::kde-unstable"
-          [[ $edition == 'nemomobile' ]] && echo "::set-output name=overlay_repo::https://img.nemomobile.net/manjaro/10.2021/devel/aarch64/nemomobile.db"
+          [[ $edition == 'nemomobile' ]] && echo "::set-output name=overlay_repo::https://img.nemomobile.net/manjaro/05.2022/devel/aarch64/nemomobile.db"
           [[ $edition == 'cutie' ]] && echo "::set-output name=overlay_repo::http://manjaro.pages.erikinkinen.fi/repo/aarch64/eriki.db"
           [[ $edition != 'plasma-mobile-dev' && $edition != 'nemomobile' && $edition != 'cutie' ]] && echo "::set-output name=overlay_repo::"
           true
