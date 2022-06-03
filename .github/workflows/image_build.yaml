@@ -37,7 +37,7 @@ jobs:
     strategy:
       matrix:
         DEVICE: [halium-9, volla-yggdrasil, google-sargo]
-        EDITION: [phosh, nemomobile]
+        EDITION: [phosh, nemomobile, minimal]
         BRANCH: [unstable]
     steps:
       - 
