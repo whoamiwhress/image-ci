@@ -8,16 +8,16 @@ jobs:
   prepare_release:
     runs-on: ubuntu-20.04
     steps:
-      - 
+      -
         uses: styfle/cancel-workflow-action@0.9.1
         with:
           access_token: ${{ github.token }}
-      - 
+      -
         id: time
         uses: nanzm/get-time-action@v1.1
         with:
           format: 'YYYYMMDDHHmm'
-      - 
+      -
         id: release
         uses: actions/create-release@v1.1.4
         env:
@@ -36,20 +36,20 @@ jobs:
     needs: prepare_release
     strategy:
       matrix:
-        DEVICE: [halium-9, volla-yggdrasil, google-sargo]
-        EDITION: [phosh, minimal]
+        DEVICE: [halium-9, google-sargo]
+        EDITION: [phosh]
         BRANCH: [unstable]
     steps:
-      - 
+      -
         uses: styfle/cancel-workflow-action@0.9.1
         with:
           access_token: ${{ github.token }}
-      - 
+      -
         id: time
         uses: nanzm/get-time-action@v1.1
         with:
           format: 'YYYYMMDD'
-      - 
+      -
         id: check_overlay_repo
         run: |
           [[ $edition == 'plasma-mobile-dev' ]] && echo "::set-output name=overlay_repo::kde-unstable"
@@ -70,8 +70,8 @@ jobs:
           #CI_PUB_KEY: "${{ secrets.CI_PUB_KEY }}"
           #CI_GPG_SECRET: "${{ secrets.CI_GPG_SECRET }}"
           #CI_GPG_PASSPHRASE: "${{ secrets.CI_GPG_PASSPHRASE }}"
-      - 
-        id: upload_release 
+      -
+        id: upload_release
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -80,7 +80,7 @@ jobs:
           asset_path: ./${{ env.FILE_PATH }}
           asset_name: ${{ env.FILE_PATH }}
           asset_content_type: application/x-iso-image
-      - 
+      -
         id: upload_sha1
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -90,7 +90,7 @@ jobs:
           asset_path: ./${{ env.FILE_SHA1 }}
           asset_name: ${{ env.FILE_SHA1 }}
           asset_content_type: text/plain
-      - 
+      -
         id: upload_pkg
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -100,7 +100,7 @@ jobs:
           asset_path: ./${{ env.FILE_PKG }}
           asset_name: ${{ env.FILE_PKG }}
           asset_content_type: text/plain
-      - 
+      -
         name: rollback_release
         if: failure()
         uses: author/action-rollback@stable
