@@ -36,7 +36,7 @@ jobs:
     needs: prepare_release
     strategy:
       matrix:
-        DEVICE: [halium-9, google-sargo]
+        DEVICE: [halium-9, halium-10, halium-11, google-sargo]
         EDITION: [phosh]
         BRANCH: [unstable]
     steps:
