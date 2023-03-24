@@ -50,14 +50,6 @@ jobs:
         with:
           format: 'YYYYMMDD'
       -
-        id: check_overlay_repo
-        run: |
-          [[ $edition == 'plasma-mobile-dev' ]] && echo "::set-output name=overlay_repo::kde-unstable"
-          [[ $edition != 'plasma-mobile-dev' ]] && echo "::set-output name=overlay_repo::"
-          true
-        env:
-          edition: ${{ matrix.edition }}
-      -
         id: image-build
         uses: manjaro-libhybris/rootfs@master
         with:
@@ -67,9 +59,6 @@ jobs:
           branch: ${{ matrix.branch }}
           version: ${{ steps.time.outputs.time }}
           overlay-repo: ${{ steps.check_overlay_repo.outputs.overlay_repo }}
-          #CI_PUB_KEY: "${{ secrets.CI_PUB_KEY }}"
-          #CI_GPG_SECRET: "${{ secrets.CI_GPG_SECRET }}"
-          #CI_GPG_PASSPHRASE: "${{ secrets.CI_GPG_PASSPHRASE }}"
       -
         id: upload_release
         uses: actions/upload-release-asset@v1.0.2
