@@ -36,7 +36,7 @@ jobs:
     needs: prepare_release
     strategy:
       matrix:
-        DEVICE: [halium-9, halium-10, halium-11, google-sargo, xiaomi-onclite, xiaomi-lavender, xiaomi-miatoll, xiaomi-dandelion]
+        DEVICE: [halium-9, halium-10, halium-11, google-sargo, xiaomi-onclite, xiaomi-lavender, xiaomi-miatoll, xiaomi-dandelion, samsung-starqlte]
         EDITION: [phosh]
         BRANCH: [unstable]
     steps:
