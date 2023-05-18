@@ -1,4 +1,4 @@
-# Manjaro Halium Developer Edition
+# Manjaro libhybris
 [![iso_build](https://github.com/manjaro-libhybris/image-ci/workflows/image_build/badge.svg)](https://github.com/manjaro-libhybris/image-ci/actions)
 
 ## description
