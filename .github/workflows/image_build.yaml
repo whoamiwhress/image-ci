@@ -9,12 +9,12 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       -
-        uses: styfle/cancel-workflow-action@0.9.1
+        uses: styfle/cancel-workflow-action@0.11.0
         with:
           access_token: ${{ github.token }}
       -
         id: time
-        uses: nanzm/get-time-action@v1.1
+        uses: nanzm/get-time-action@v2.0
         with:
           format: 'YYYYMMDDHHmm'
       -
@@ -41,12 +41,12 @@ jobs:
         BRANCH: [unstable]
     steps:
       -
-        uses: styfle/cancel-workflow-action@0.9.1
+        uses: styfle/cancel-workflow-action@0.11.0
         with:
           access_token: ${{ github.token }}
       -
         id: time
-        uses: nanzm/get-time-action@v1.1
+        uses: nanzm/get-time-action@v2.0
         with:
           format: 'YYYYMMDD'
       -
@@ -76,3 +76,4 @@ jobs:
           release_id: ${{ needs.prepare_release.outputs.release_id }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
