@@ -37,7 +37,7 @@ jobs:
     strategy:
       matrix:
         DEVICE: [halium-9, halium-10, halium-11, google-sargo, xiaomi-onclite, xiaomi-lavender, xiaomi-miatoll, xiaomi-dandelion, samsung-starqlte]
-        EDITION: [phosh, nemomobile, minimal]
+        EDITION: [phosh, nemomobile, lomiri, minimal]
         BRANCH: [unstable]
     steps:
       -
@@ -76,4 +76,3 @@ jobs:
           release_id: ${{ needs.prepare_release.outputs.release_id }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-

@@ -3,7 +3,7 @@ name: count_downloads
 on:
   workflow_dispatch:
   schedule:
-    - cron:  '5 4 * * *'
+    - cron:  '0 0 * * 0'
 
 jobs:
   count:
